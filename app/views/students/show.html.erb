@@ -1,0 +1,7 @@
+<%=@students.name%>
+<ol>
+<% @students.courses.each do |course| %>
+
+<li><%=course.subject%></li>
+</ol>
+<%end%>
