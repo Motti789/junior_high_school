@@ -1,7 +1,8 @@
 <%=@students.name%>
-<ol>
+<ul>
+
 <% @students.courses.each do |course| %>
 
 <li><%=course.subject%></li>
-</ol>
+</ul>
 <%end%>

@@ -1,7 +1,9 @@
 <h1> Students </h1>
 <ul>
 <% @students.each do |student| %>
-  <li>Name: <%= link_to student.name, student_path(student) %> Number of Courses: <%= student.courses.count %></li>
+  <li>Name: <%= link_to student.name, student_path(student) %> 
+  <br>
+   Number of Courses: <%= student.courses.count %></li>
 <br>
 <% end %>
 </ul>
