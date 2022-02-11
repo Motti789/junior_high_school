@@ -1,6 +1,12 @@
 <h1>Sign up</h1>
 
 <%= form_for(@student) do |f| %>
+
+<%if @student.errors.any?%>
+  <%@student.errors.full_messages do |message|%>
+  <%=message%>
+<%end%>
+
     <div class="mb-3">
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: "Motti"%>
@@ -13,4 +19,5 @@
     <div class="mb-3">
      <%= f.submit "Create Account", class: "btn btn-primary" %>
      </div>
+    <%end%>
     <%end%>
