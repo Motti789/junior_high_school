@@ -1,15 +1,19 @@
 <h1>Sign up</h1>
+<br>
+<%= form_for @student do |f| %>
+<% if @student.errors.any? %>
+  <div class="alert alert-danger">
+  <% @student.errors.full_messages.each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+  </div>
+  <%end%>
 
-<%= form_for(@student) do |f| %>
-
-<%if @student.errors.any?%>
-  <%@student.errors.full_messages do |message|%>
-  <%=message%>
-<%end%>
 
     <div class="mb-3">
     <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Motti"%>
+    <br>
+    <%= f.text_field :name, class: "form-control", placeholder: "Username"%>
      </div>
 
      <div class="mb-3">
@@ -19,5 +23,5 @@
     <div class="mb-3">
      <%= f.submit "Create Account", class: "btn btn-primary" %>
      </div>
-    <%end%>
-    <%end%>
+<%end%>
+    
